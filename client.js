@@ -1,7 +1,7 @@
 // establishes a connection with the game server
 const net = require("net");
 
-const connect = function () {
+const connect = function() {
   const conn = net.createConnection({
     host: '135.23.223.133',// IP address here,
     port: '50542'// PORT number here,
@@ -11,8 +11,8 @@ const connect = function () {
   conn.setEncoding("utf8");
  
   conn.on("connect", () => {
-    console.log('QGG connected!')
-    conn.write('Name: QGG')
+    console.log('QGG connected!');
+    conn.write('Name: QGG');
     /*
     setTimeout(() => conn.write('Move: up'), 2000)
     setTimeout(() => conn.write('Move: down'), 4000)
@@ -26,7 +26,7 @@ const connect = function () {
 
   conn.on("data", (data)=> {
     console.log(data);
-  })
+  });
 
   return conn;
 };

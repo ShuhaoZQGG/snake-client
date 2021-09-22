@@ -13,10 +13,18 @@ const connect = function () {
   conn.on("connect", () => {
     console.log('QGG connected!')
     conn.write('Name: QGG')
+    setTimeout(() => conn.write('Move: up'), 2000)
+    setTimeout(() => conn.write('Move: down'), 4000)
+    setTimeout(() => conn.write('Move: left'), 6000)
+    setTimeout(() => conn.write('Move: right'), 8000)
+    setTimeout(() => conn.write('Move: up'), 3000)
+    setTimeout(() => conn.write('Move: up'), 9000)
+    setInterval(() => conn.write('Move: up'), 1000)
   });
 
   conn.on("data", (data)=> {
     console.log(data);
+    
   })
 
   return conn;

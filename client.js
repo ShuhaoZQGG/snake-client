@@ -9,7 +9,7 @@ const connect = function () {
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
-
+ 
   conn.on("connect", () => {
     console.log('QGG connected!')
     conn.write('Name: QGG')
@@ -26,7 +26,6 @@ const connect = function () {
 
   conn.on("data", (data)=> {
     console.log(data);
-    
   })
 
   return conn;
